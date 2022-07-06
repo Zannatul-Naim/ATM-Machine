@@ -7,39 +7,39 @@ public class Account_Info {
     private double balance;
 
     Scanner scan = new Scanner(System.in);
-    DecimalFormat decimalFormat = new DecimalFormat("'$'####,##,##0.00");
+    DecimalFormat decimalFormat = new DecimalFormat("'$'####,##,##0.00");   // Craete a number format
 
-    public void setAccountNumber(int accountNumber) {
+    public void setAccountNumber(int accountNumber) {  // Set Account Number
         this.accountNumber = accountNumber;
     }
 
-    public int getAccountNumber() {
+    public int getAccountNumber() {   // Return Account number
         return this.accountNumber;
     }
 
-    public void setPinNumber(int pinNumber) {
+    public void setPinNumber(int pinNumber) {   /// set Pin number
         this.pinNumber = pinNumber;
     }
 
-    public int getPinNumber() {
+    public int getPinNumber() {   // return pin Number
         return this.pinNumber;
     }
 
-    public double getBalance() {
+    public double getBalance() {   // Return net present balance
         return this.balance;
     }
 
-    public double withdraw(double amount) {
+    public double withdraw(double amount) {   // Withdraw a balance
         balance = balance - amount;
         return balance;
     }
 
-    public double diposit(double amount) {
+    public double diposit(double amount) {  // Diposit a money
         balance += amount;
         return balance;
     }
 
-    public void checkWithdrawable() {
+    public void checkWithdrawable() {   // Check a balance withdrawable or not!
         System.out.println("\nEnter amount to withdraw : ");
         double amount = scan.nextDouble();
         if((amount - balance) >= 0) {
@@ -50,7 +50,7 @@ public class Account_Info {
         }
     }
 
-    public void dipositMoney() {
+    public void dipositMoney() {   // diposit a positive money
         System.out.println("\nAccount Balance : " + decimalFormat.format(getBalance()));
         System.out.println("\nEnter amount to diposit : ");
         double amount = scan.nextDouble();
