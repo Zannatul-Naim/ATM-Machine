@@ -6,17 +6,17 @@ public class Menu extends Account_Info {
     Scanner scan = new Scanner(System.in);
 
 public void view() {
-    System.out.println("\n============Welcome to Banglatm============\n");
+    System.out.println("\n============ Welcome to ATM ============\n");
     System.out.println("\nPress 1 for Check Balance : ");
-    System.out.println("\nPress 2 for withdraw funds : ");
-    System.out.println("\nPress 3 for diposit : ");
+    System.out.println("\nPress 2 for Withdraw Money : ");
+    System.out.println("\nPress 3 for Diposit : ");
     System.out.println("\nPress 4 for Exit.");
-    System.out.println("Enter your Choice : ");
+    System.out.print("Enter your Choice : ");
     int choice = scan.nextInt();
-
+    System.out.println("\n");
     switch(choice) {
         case 1:
-            System.out.println("Net Balance : " + decimalFormat.format(getBalance()));
+            System.out.println("Present Balance : " + decimalFormat.format(getBalance()));
             break;
         case 2:
             checkWithdrawable();
@@ -29,11 +29,11 @@ public void view() {
             System.exit(0);
             break;
         default :
-            System.out.println("Invalid choice");
+            System.out.println("Invalid Choice");
     }
 }
-
-public void register() throws IOException {
+ 
+public void register() throws IOException {   // Registration Page
     System.out.println("======== Register New account ========");
 
     System.out.println("\nWelcome to ATM\n");
@@ -58,7 +58,7 @@ public void register() throws IOException {
     login();
 }
 
-public void login() throws IOException {
+public void login() throws IOException {   // Login page
     System.out.println("============ Log In information ==========");
     System.out.println("\nWelcome to ATM");
     
@@ -95,16 +95,16 @@ public void login() throws IOException {
         int choice = scan.nextInt();
         switch(choice) {
             case 1:
-                register();
+                register();   // Register for a new Account
                 break;
             case 2:
-                login();
+                login();   // Login with acc No and pin No.
                 break;
             default :
                 System.out.println("\nInvalid Input\n");
         }
     }
-    bufferedReader.close();
+    bufferedReader.close();   // Closing the Buffer Reader
 }
 
 }
